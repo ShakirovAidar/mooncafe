@@ -24,14 +24,17 @@ export default{
    o.mode==="delivery"?`📍 <a href="${esc(o.map)}">Google Maps</a>`:null,
    `🕒 ${time}`
   ].filter(l=>l!==null).join("\n");
-  if(!env.TELEGRAM_BOT_TOKEN||!env.TELEGRAM_CHAT_ID)return json({ok:false,error:"not_configured"},503);
+  const token=String(env.TELEGRAM_BOT_TOKEN||"").trim().replace(/^bot/i,""),chat=String(env.TELEGRAM_CHAT_ID||"").trim();
+  if(!token||!chat)return json({ok:false,error:"not_configured"},503);
   try{
-   const r=await fetch(`https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({chat_id:env.TELEGRAM_CHAT_ID,text,parse_mode:"HTML",disable_web_page_preview:true}),signal:AbortSignal.timeout(8000)});
+   const r=await fetch(`https://api.telegram.org/bot${token}/sendMessage`,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({chat_id:chat,text,parse_mode:"HTML",disable_web_page_preview:true}),signal:AbortSignal.timeout(8000)});
    const result=await r.json();
    if(r.ok&&result.ok===true)return json({ok:true});
-   return json({ok:false,error:"telegram"},502);
-  }catch{
-   return json({ok:false,error:"telegram"},502);
+   console.error("telegram",r.status,result.description);
+   return json({ok:false,error:"telegram",detail:result.description||String(r.status)},502);
+  }catch(e){
+   console.error("telegram fetch",String(e));
+   return json({ok:false,error:"telegram",detail:"network"},502);
   }
  }
 };

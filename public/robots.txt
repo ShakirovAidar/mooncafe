@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Sitemap: https://afterwave-menu.aidar-crypto2000.workers.dev/sitemap.xml

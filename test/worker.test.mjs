@@ -23,3 +23,8 @@ test("MENU matches CATS in public/index.html",()=>{const s=fs.readFileSync(new U
  const C=new Function("return "+s.match(/const CATS=(\[[\s\S]*?\n\]);/)[1])();const ids=[];
  for(const c of C)for(const i of c.items){ids.push(i.id);assert.deepEqual(MENU[i.id],{name:i.n,price:i.p},i.id)}
  assert.equal(ids.length,Object.keys(MENU).length)});
+test("secrets are trimmed and Telegram error text is returned",async()=>{
+ const sent=[];globalThis.fetch=async(u,o)=>{sent.push(String(u));return new Response(JSON.stringify({ok:false,description:"Bad Request: chat not found"}),{status:400})};
+ const r=await worker.fetch(req(pick),env({TELEGRAM_BOT_TOKEN:" bot123:ABC\n",TELEGRAM_CHAT_ID:" 42 "}));
+ assert.equal(sent[0],"https://api.telegram.org/bot123:ABC/sendMessage");assert.equal(r.status,502);
+ assert.equal((await r.json()).detail,"Bad Request: chat not found")});
