@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Afterwave Moonshine Bar — меню</title>
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0a0604">
+<meta name="description" content="Меню Afterwave Moonshine Bar, Най Янг, Пхукет. Доставка по Най Янгу или самовывоз.">
+<link rel="icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0604;--card:#17100b;--ember:#ff8a1e;--gold:#ffc24a;--red:#e8431a;--cream:#f4e6cf;--mute:#a2907a;--line:rgba(255,138,30,.28);--err:#ff7a5c;
+--head:"Oswald","Arial Narrow",Impact,sans-serif;--body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);height:100%}
+*,*::before,*::after{box-sizing:inherit;margin:0}
+body{height:100%;overflow:hidden;background:var(--bg);color:var(--cream);font:16px/1.4 var(--body);-webkit-font-smoothing:antialiased}
+button,input{font:inherit;color:inherit}button{border:0;background:none;cursor:pointer}
+#app{position:relative;max-width:480px;height:100%;margin:0 auto;display:flex;flex-direction:column;overflow:hidden;
+background:radial-gradient(ellipse 110% 50% at 50% -5%,rgba(255,110,20,.28),transparent 65%),radial-gradient(ellipse 80% 40% at 50% 110%,rgba(232,67,26,.18),transparent 70%),var(--bg)}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px 20px;border-radius:12px;font:700 20px var(--head);letter-spacing:.06em;text-transform:uppercase;
+color:#1a0c02;background:linear-gradient(180deg,var(--gold),var(--ember) 60%,var(--red));box-shadow:0 0 28px rgba(255,138,30,.35),inset 0 1px 0 rgba(255,255,255,.4);transition:transform .2s,filter .2s}
+.btn:active{transform:scale(.98)}.btn[disabled]{opacity:.4;pointer-events:none}
+.btn.ghost{background:transparent;color:var(--gold);border:1.5px solid var(--line);box-shadow:none}
+/* welcome */
+.welcome{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:24px 24px 28px;text-align:center}
+.logo{width:min(84%,360px);aspect-ratio:1;border-radius:28px;object-fit:cover;margin:auto 0 18px;box-shadow:0 0 70px rgba(255,120,20,.35),0 0 0 1px var(--line);animation:rise 1s both}
+.welcome p{font:500 15px var(--head);letter-spacing:.3em;text-transform:uppercase;color:var(--mute);margin-bottom:18px}
+.welcome .btn{animation:rise 1s .3s both}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+/* menu */
+.top{display:flex;align-items:center;gap:12px;padding:12px 18px 6px}
+.top img{width:40px;height:40px;border-radius:10px;object-fit:cover;box-shadow:0 0 0 1px var(--line)}
+.top b{font:700 22px var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--gold);line-height:1}
+.top small{display:block;font:500 12px var(--head);letter-spacing:.28em;color:var(--mute);text-transform:uppercase}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:8px 18px 10px;scroll-snap-type:x proximity;scrollbar-width:none;flex-shrink:0;border-bottom:1px solid var(--line)}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;scroll-snap-align:center;padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);font:500 16px var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);transition:.25s}
+.tab.on{color:#1a0c02;border-color:transparent;background:linear-gradient(180deg,var(--gold),var(--ember));box-shadow:0 0 18px rgba(255,138,30,.4)}
+.grp{font:500 13px var(--head);letter-spacing:.3em;text-transform:uppercase;color:var(--ember);margin-bottom:10px}
+.add{width:42px;height:42px;border-radius:50%;font:700 26px/1 var(--head);color:#1a0c02;background:linear-gradient(180deg,var(--gold),var(--ember));box-shadow:0 0 16px rgba(255,138,30,.4)}
+.step{display:flex;align-items:center;gap:6px}
+.step button{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--ember);color:var(--gold);font:700 20px/1 var(--head)}
+.step span{min-width:20px;text-align:center;font:700 18px var(--head)}
+.cartbar{position:absolute;left:0;right:0;bottom:0;padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(0deg,var(--bg) 60%,transparent)}
+.cartbar[hidden]{display:none}
+.cartbar .btn{justify-content:space-between}
+/* deck */
+.head2{display:flex;justify-content:space-between;align-items:baseline;padding:14px 18px 10px;flex-shrink:0}
+.head2 .grp{margin:0}.cnt{font:500 14px var(--head);letter-spacing:.2em;color:var(--mute)}
+.deck{flex:1;min-height:0;display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;padding:0 18px 96px;scroll-padding-inline:18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.deck::-webkit-scrollbar{display:none}.deck::after{content:"";flex:0 0 4px}
+.card{flex:0 0 82%;scroll-snap-align:start;display:flex;flex-direction:column;overflow:hidden;border-radius:34px 34px 10px 10px;background:linear-gradient(160deg,#1d130c,#0d0805);border:1.5px solid var(--line);box-shadow:0 12px 36px rgba(0,0,0,.55),0 0 40px rgba(255,120,20,.12);animation:rise .6s both}
+.pic{flex:1;min-height:0;position:relative;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,rgba(255,138,30,.4),rgba(255,138,30,.05) 70%)}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.pic .big{font-size:min(32vw,130px);filter:drop-shadow(0 0 24px rgba(255,138,30,.5))}
+.meta{display:flex;align-items:flex-end;gap:12px;padding:14px 16px 16px;flex-shrink:0;border-top:1px solid var(--line)}
+.meta .t{flex:1;min-width:0}
+.meta h3{font:500 25px/1.05 var(--head);letter-spacing:.03em;text-transform:uppercase}
+.meta p{font-size:14px;color:var(--mute);margin-top:4px}
+.pr{font:700 28px var(--head);color:var(--gold);margin-top:6px}
+.card .add{width:54px;height:54px;font-size:34px}.card .step button{width:40px;height:40px}.card .step span{font-size:22px}
+/* sheet */
+.sheet{position:absolute;inset:0;z-index:10;display:none}
+.sheet.open{display:block}
+.back{position:absolute;inset:0;background:rgba(0,0,0,.65)}
+.panel{position:absolute;left:0;right:0;bottom:0;max-height:90%;display:flex;flex-direction:column;background:#120b07;border:1px solid var(--line);border-bottom:0;border-radius:22px 22px 0 0;padding:18px 18px calc(16px + env(safe-area-inset-bottom,0px));animation:rise .35s both}
+.panel h2{font:700 28px var(--head);letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.x{font-size:28px;color:var(--mute);line-height:1}
+.body{overflow-y:auto;scrollbar-width:none;flex:1;min-height:0}
+.body::-webkit-scrollbar{display:none}
+.line{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dotted var(--line)}
+.line .n{flex:1;font-weight:500}.line .n small{display:block;color:var(--mute)}
+.line .s{min-width:64px;text-align:right;font:700 18px var(--head);color:var(--gold)}
+.total{display:flex;justify-content:space-between;align-items:baseline;padding:12px 0 6px;font:500 20px var(--head);text-transform:uppercase;letter-spacing:.06em}
+.total b{font-size:30px;color:var(--gold)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.two .btn{font-size:17px;padding:14px 8px}
+.empty{padding:30px 0;text-align:center;color:var(--mute)}
+label{display:block;margin:12px 0 5px;font-size:14px;color:var(--mute)}
+.field{border:1.5px solid var(--line);border-radius:10px;background:#0c0704;transition:.3s}
+.field:focus-within{border-color:var(--ember);box-shadow:0 0 18px rgba(255,138,30,.25)}
+.field input{width:100%;border:0;background:transparent;outline:0;padding:12px 14px;font-size:18px}
+.err{color:var(--err);font-size:14px;min-height:18px;margin-top:3px}
+.note{display:flex;gap:10px;align-items:flex-start;margin-top:12px;padding:10px 12px;border-radius:10px;background:rgba(255,138,30,.1);border:1px solid var(--line);font-size:14px}
+.chk{display:flex;gap:10px;align-items:flex-start;margin-top:12px;font-size:14px;color:var(--cream)}
+.chk input{width:20px;height:20px;accent-color:var(--ember);margin-top:1px;flex-shrink:0}
+.when{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{padding:13px 8px;border-radius:10px;border:1.5px solid var(--line);font:500 16px var(--head);letter-spacing:.05em;text-transform:uppercase;color:var(--mute);transition:.25s}
+.opt.on{border-color:var(--ember);color:var(--gold);background:rgba(255,138,30,.14);box-shadow:0 0 16px rgba(255,138,30,.25)}
+/* thanks */
+.thanks{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:30px;text-align:center}
+.thanks img{width:150px;border-radius:24px;box-shadow:0 0 60px rgba(255,120,20,.4);animation:rise .8s both}
+.thanks h1{font:700 44px var(--head);letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.thanks p{color:var(--cream);max-width:300px}
+.thanks .btn{margin-top:16px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+const LOGO="assets/logo.jpg";
+const ORDER_ENDPOINT="/api/order"; // сюда адрес бэкенда (например /api/order) — без него заявка только показывается на экране
+const CATS=[
+ {id:"burgers",name:"Бургеры",group:"Еда",items:[
+  {id:"b1",img:"assets/dishes/b1.jpg",n:"Beef Burger",d:"Говядина, чеддер, карамелизированный лук. Чипсы в сете",p:250,i:"🍔"}]},
+ {id:"thai",name:"Тайская кухня",group:"Еда",items:[
+  {id:"t1",img:"assets/dishes/t1.jpg",n:"Кра пао · курица",d:"Рис, базилик, чили",p:80,i:"🍚"},
+  {id:"t2",img:"assets/dishes/t2.jpg",n:"Кра пао · свинина",d:"Рис, базилик, чили",p:90,i:"🍚"},
+  {id:"t3",img:"assets/dishes/t3.jpg",n:"Кра пао · говядина",d:"Рис, базилик, чили",p:100,i:"🍚"},
+  {id:"t4",img:"assets/dishes/t4.jpg",n:"Кра пао · морепродукты",d:"Рис, базилик, чили",p:120,i:"🦐"},
+  {id:"t5",img:"assets/dishes/t5.jpg",n:"Кра пао · микс морепродуктов",d:"Рис, базилик, чили",p:150,i:"🦑"},
+  {id:"t6",img:"assets/dishes/t6.jpg",n:"Яйцо жареное",d:"Добавка к блюду",p:10,i:"🍳"},
+  {id:"t7",img:"assets/dishes/t7.jpg",n:"Омлет",d:"Добавка к блюду",p:20,i:"🥚"}]},
+ {id:"snacks",name:"Закуски",group:"Еда",items:[
+  {id:"s1",img:"assets/dishes/s1.jpg",n:"Картофель фри",d:"Хрустящий, с соусом",p:90,i:"🍟"},
+  {id:"s2",img:"assets/dishes/s2.jpg",n:"Куриные крылья",d:"Острый BBQ",p:180,i:"🍗"},
+  {id:"s3",img:"assets/dishes/s3.jpg",n:"Начос",d:"Сыр, сальса",p:160,i:"🧀"}]},
+ {id:"cocktails",name:"Коктейли",group:"Напитки",items:[
+  {id:"c1",img:"assets/dishes/c1.jpg",n:"Moonshine Sour",d:"Авторский, цитрус",p:220,i:"🍹"},
+  {id:"c2",img:"assets/dishes/c2.jpg",n:"Afterwave Mule",d:"Имбирь, лайм",p:240,i:"🍸"},
+  {id:"c3",img:"assets/dishes/c3.jpg",n:"Mojito",d:"Мята, лайм, ром",p:200,i:"🍃"}]},
+ {id:"shots",name:"Шоты",group:"Напитки",items:[
+  {id:"h1",img:"assets/dishes/h1.jpg",n:"Moonshine Shot",d:"Фирменный",p:80,i:"🥃"},
+  {id:"h2",img:"assets/dishes/h2.jpg",n:"Сет 3 шота",d:"Как на логотипе",p:220,i:"🔥"}]},
+ {id:"beer",name:"Пиво",group:"Напитки",items:[
+  {id:"r1",img:"assets/dishes/r1.jpg",n:"Chang",d:"0,64 л",p:90,i:"🍺"},
+  {id:"r2",img:"assets/dishes/r2.jpg",n:"Singha",d:"0,33 л",p:80,i:"🍺"},
+  {id:"r3",img:"assets/dishes/r3.jpg",n:"Heineken",d:"0,33 л",p:110,i:"🍻"}]},
+ {id:"soft",name:"Безалкогольное",group:"Напитки",items:[
+  {id:"f1",img:"assets/dishes/f1.jpg",n:"Вода",d:"0,6 л",p:20,i:"💧"},
+  {id:"f2",img:"assets/dishes/f2.jpg",n:"Cola",d:"0,33 л",p:40,i:"🥤"},
+  {id:"f3",img:"assets/dishes/f3.jpg",n:"Лайм-фреш",d:"Свежевыжатый",p:70,i:"🍋"}]},
+ {id:"other",name:"Прочее",group:"Прочее",items:[
+  {id:"o2",img:"assets/dishes/o2.jpg",n:"Зажигалка",d:"Moonshine",p:50,i:"⚡"}]}
+];
+const ALL=Object.fromEntries(CATS.flatMap(c=>c.items.map(i=>[i.id,i])));
+const S={screen:"welcome",cat:CATS[0].id,cart:{},sheet:null,mode:null,phone:"",map:"",when:"asap",time:"",touched:false,sending:false,fail:false};
+const $=document.getElementById("app");
+const money=n=>n.toLocaleString("en-US")+" ฿";
+const qty=()=>Object.values(S.cart).reduce((a,b)=>a+b,0);
+const sum=()=>Object.entries(S.cart).reduce((a,[id,q])=>a+ALL[id].p*q,0);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+function ctl(id){const q=S.cart[id]||0;
+ return q?`<div class="step"><button data-a="dec" data-id="${id}" aria-label="Убрать">−</button><span>${q}</span><button data-a="inc" data-id="${id}" aria-label="Добавить">+</button></div>`
+ :`<button class="add" data-a="inc" data-id="${id}" aria-label="В корзину">+</button>`;}
+function bar(){const b=document.getElementById("cartbar");if(!b)return;
+ b.hidden=!qty();b.innerHTML=`<button class="btn" data-a="cart"><span>Корзина · ${qty()}</span><span>${money(sum())}</span></button>`;}
+function items(){const c=CATS.find(x=>x.id===S.cat);
+ return c.items.map((i,k)=>`<article class="card" style="animation-delay:${k*.08}s"><div class="pic">${i.img?`<img src="${esc(i.img)}" alt="${esc(i.n)}" onerror="this.remove()">`:""}<span class="big">${i.i}</span></div><div class="meta"><div class="t"><h3>${esc(i.n)}</h3><p>${esc(i.d)}</p><div class="pr">${money(i.p)}</div></div><div class="ctl" id="ctl-${i.id}">${ctl(i.id)}</div></div></article>`).join("");}
+
+function sheetHTML(){
+ if(!S.sheet)return "";
+ let h="";
+ if(S.sheet==="cart"){
+  const rows=Object.entries(S.cart).map(([id,q])=>`<div class="line"><div class="n">${esc(ALL[id].n)}<small>${money(ALL[id].p)} × ${q}</small></div><div class="step"><button data-a="dec" data-id="${id}">−</button><span>${q}</span><button data-a="inc" data-id="${id}">+</button></div><div class="s">${money(ALL[id].p*q)}</div></div>`).join("");
+  h=`<h2>Корзина<button class="x" data-a="close" aria-label="Закрыть">×</button></h2><div class="body">${rows||'<div class="empty">Пока пусто</div>'}</div>
+  ${rows?`<div class="total"><span>Итого</span><b>${money(sum())}</b></div><div class="two"><button class="btn" data-a="mode" data-m="delivery">Доставка</button><button class="btn ghost" data-a="mode" data-m="pickup">Забрать в заведении</button></div>`:""}`;
+ }else{
+  const d=S.mode==="delivery",ok=valid();
+  h=`<h2>${d?"Доставка":"Забрать в заведении"}<button class="x" data-a="close" aria-label="Закрыть">×</button></h2><div class="body">
+  ${d?`<label for="ph">Номер телефона</label><div class="field"><input id="ph" type="tel" inputmode="tel" placeholder="+66 81 234 5678" value="${esc(S.phone)}" autocomplete="tel"></div><div class="err" id="e-ph"></div>
+  <label for="mp">Ссылка на Google Maps</label><div class="field"><input id="mp" type="url" inputmode="url" placeholder="https://maps.app.goo.gl/..." value="${esc(S.map)}" autocapitalize="none" autocorrect="off"></div><div class="err" id="e-mp"></div>
+  <div class="note">📍 Доставка только по Най Янгу</div>`
+  :`<label>Когда будет готово</label><div class="when"><button class="opt ${S.when==="asap"?"on":""}" data-a="when" data-w="asap">Как можно скорее</button><button class="opt ${S.when==="time"?"on":""}" data-a="when" data-w="time">К определённому времени</button></div>
+  ${S.when==="time"?`<div class="field" style="margin-top:10px"><input id="tm" type="time" value="${esc(S.time)}"></div><div class="err" id="e-tm"></div>`:""}`}
+  <div class="total"><span>Итого</span><b>${money(sum())}</b></div></div>
+  ${S.fail?'<div class="err">Не удалось отправить. Попробуйте ещё раз.</div>':""}
+  <div class="two"><button class="btn ghost" data-a="tocart">Назад</button><button class="btn" id="go" data-a="send" ${ok&&!S.sending?"":"disabled"}>${S.sending?"Отправляем…":"Заказать"}</button></div>`;
+ }
+ return `<div class="sheet open"><div class="back" data-a="close"></div><div class="panel" role="dialog">${h}</div></div>`;
+}
+const MAP_RE=/^https?:\/\/(maps\.app\.goo\.gl|goo\.gl\/maps|(www\.)?google\.[a-z.]+\/maps|maps\.google\.[a-z.]+)/i;
+const phOk=()=>{const n=S.phone.replace(/\D/g,"").length;return n>=8&&n<=15};
+const mapOk=()=>MAP_RE.test(S.map.trim());
+const timeOk=()=>S.when==="asap"||/^\d{2}:\d{2}$/.test(S.time);
+function valid(){return S.mode==="delivery"?phOk()&&mapOk():timeOk();}
+function errs(){const s=(id,m)=>{const e=document.getElementById(id);if(e)e.textContent=S.touched&&m?m:""};
+ s("e-ph",!phOk()&&"Проверьте номер телефона");s("e-mp",!mapOk()&&"Нужна ссылка на Google Maps");s("e-tm",!timeOk()&&"Укажите время");
+ const g=document.getElementById("go");if(g)g.disabled=!valid()||S.sending;}
+
+function render(){
+ if(S.screen==="welcome"){$.innerHTML=`<div class="welcome"><img class="logo" src="${LOGO}" alt="Afterwave Moonshine Bar"><p>Най Янг · Пхукет</p><button class="btn" data-a="open">Посмотреть меню</button></div>`;return;}
+ if(S.screen==="thanks"){$.innerHTML=`<div class="thanks"><img src="${LOGO}" alt=""><h1>Спасибо!</h1><p>Мы обрабатываем ваш заказ. Менеджер в ближайшее время свяжется с вами.</p><button class="btn ghost" data-a="home">В начало</button></div>`;return;}
+ const cur=CATS.find(x=>x.id===S.cat);
+ $.innerHTML=`<div class="top"><img src="${LOGO}" alt=""><div><b>Afterwave</b><small>Moonshine bar</small></div></div>
+ <div class="tabs" id="tabs">${CATS.map(c=>`<button class="tab ${c.id===S.cat?"on":""}" data-a="cat" data-id="${c.id}">${c.name}</button>`).join("")}</div>
+ <div class="head2"><span class="grp">${cur.group}</span><span class="cnt" id="cnt">1 / ${cur.items.length}</span></div><div class="deck" id="list">${items()}</div><div class="cartbar" id="cartbar" hidden></div><div id="sheet">${sheetHTML()}</div>`;
+ bar();const l=document.getElementById("list"),cn=document.getElementById("cnt");const cw=()=>{const c=l.querySelector(".card");return c?c.offsetWidth+14:1};l.addEventListener("scroll",()=>{const k=CATS.find(x=>x.id===S.cat).items.length;cn.textContent=Math.min(k,Math.round(l.scrollLeft/cw())+1)+" / "+k},{passive:true});
+}
+function refresh(id){
+ const c=document.getElementById("ctl-"+id);if(c)c.innerHTML=ctl(id);bar();
+ if(S.sheet==="cart"){if(!qty()){S.sheet=null;}document.getElementById("sheet").innerHTML=sheetHTML();}
+}
+async function send(){
+ S.touched=true;if(!valid()){errs();return;}
+ S.sending=true;S.fail=false;document.getElementById("sheet").innerHTML=sheetHTML();
+ const order={mode:S.mode,phone:S.mode==="delivery"?S.phone.trim():null,map:S.mode==="delivery"?S.map.trim():null,when:S.mode==="pickup"?(S.when==="asap"?"ASAP":S.time):null,
+  items:Object.entries(S.cart).map(([id,q])=>({id,qty:q}))};
+ try{
+  if(ORDER_ENDPOINT){const r=await fetch(ORDER_ENDPOINT,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(order),signal:AbortSignal.timeout(10000)});if(!r.ok)throw 0;}
+  S.sending=false;S.sheet=null;S.cart={};S.screen="thanks";render();
+ }catch{S.sending=false;S.fail=true;document.getElementById("sheet").innerHTML=sheetHTML();}
+}
+function setCat(id){S.cat=id;const c=CATS.find(x=>x.id===id);
+ document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("on",b.dataset.id===id));
+ document.querySelector(".head2 .grp").textContent=c.group;
+ document.getElementById("cnt").textContent="1 / "+c.items.length;
+ const l=document.getElementById("list");l.innerHTML=items();l.scrollLeft=0;
+ const b=document.querySelector(".tab.on"),t=document.getElementById("tabs");
+ t.scrollTo({left:t.scrollLeft+b.getBoundingClientRect().left-t.getBoundingClientRect().left-(t.clientWidth-b.offsetWidth)/2,behavior:"smooth"});}
+$.addEventListener("click",e=>{
+ const t=e.target.closest("[data-a]");if(!t)return;const a=t.dataset.a,id=t.dataset.id;
+ if(a==="open"){S.screen="menu";render();}
+ else if(a==="home"){S.screen="welcome";S.mode=null;S.touched=false;render();}
+ else if(a==="cat"){setCat(id);}
+ else if(a==="inc"){S.cart[id]=(S.cart[id]||0)+1;refresh(id);}
+ else if(a==="dec"){S.cart[id]=(S.cart[id]||0)-1;if(S.cart[id]<=0)delete S.cart[id];refresh(id);}
+ else if(a==="cart"){S.sheet="cart";document.getElementById("sheet").innerHTML=sheetHTML();}
+ else if(a==="close"){S.sheet=null;S.fail=false;document.getElementById("sheet").innerHTML="";}
+ else if(a==="mode"){S.mode=t.dataset.m;S.sheet="form";S.touched=false;document.getElementById("sheet").innerHTML=sheetHTML();}
+ else if(a==="tocart"){S.sheet="cart";S.fail=false;document.getElementById("sheet").innerHTML=sheetHTML();}
+ else if(a==="when"){S.when=t.dataset.w;document.getElementById("sheet").innerHTML=sheetHTML();}
+ else if(a==="send"){send();}
+});
+$.addEventListener("input",e=>{const t=e.target;
+ if(t.id==="ph"){t.value=t.value.replace(/[^\d+\s()-]/g,"");S.phone=t.value;}
+ else if(t.id==="mp")S.map=t.value;else if(t.id==="tm")S.time=t.value;
+ else return;
+ errs();});
+$.addEventListener("focusout",e=>{if(e.target.closest&&e.target.closest("#sheet")){S.touched=true;errs();}});
+render();
+</script>
+</body>
+</html>
