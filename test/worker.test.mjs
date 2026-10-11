@@ -28,3 +28,8 @@ test("secrets are trimmed and Telegram error text is returned",async()=>{
  const r=await worker.fetch(req(pick),env({TELEGRAM_BOT_TOKEN:" bot123:ABC\n",TELEGRAM_CHAT_ID:" 42 "}));
  assert.equal(sent[0],"https://api.telegram.org/bot123:ABC/sendMessage");assert.equal(r.status,502);
  assert.equal((await r.json()).detail,"Bad Request: chat not found")});
+test("/api/health reports config without leaking secrets",async()=>{
+ globalThis.fetch=async(u)=>new Response(JSON.stringify(String(u).includes("getChat")?{ok:false,description:"Bad Request: chat not found"}:{ok:true}));
+ const r=await worker.fetch(new Request(H+"/api/health"),env({TELEGRAM_BOT_TOKEN:"SECRET123:xyz"}));const j=await r.json();
+ assert.deepEqual(j,{token_set:true,chat_id_set:true,getMe:"ok",getChat:"Bad Request: chat not found"});assert.ok(!JSON.stringify(j).includes("SECRET"));
+ const e=await (await worker.fetch(new Request(H+"/api/health"),env({TELEGRAM_BOT_TOKEN:undefined,TELEGRAM_CHAT_ID:undefined}))).json();assert.deepEqual(e,{token_set:false,chat_id_set:false})});
