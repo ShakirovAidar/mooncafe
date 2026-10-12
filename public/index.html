@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#0a0604">
 <!--SEO-->
 <meta name="description" content="Меню Afterwave Moonshine Bar, Най Янг, Пхукет. Доставка по Най Янгу или самовывоз. Оплата и детали — через менеджера.">
-<meta name="keywords" content="Afterwave Moonshine Bar, бар Най Янг, меню, доставка еды Най Янг, Пхукет, кра пао, бургер, коктейли, bar Nai Yang, Phuket menu, food delivery Nai Yang">
+<meta name="keywords" content="Afterwave Moonshine Bar, бар Най Янг, меню, доставка еды Най Янг, Пхукет, кра пао, хот-пот, бургер, коктейли, пиво, bar Nai Yang, Phuket menu, food delivery Nai Yang">
 <meta name="author" content="Afterwave Moonshine Bar">
 <meta name="application-name" content="Afterwave">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="Afterwave Moonshine Bar">
 <meta property="og:url" content="https://afterwave-menu.aidar-crypto2000.workers.dev/">
 <meta property="og:title" content="Afterwave Moonshine Bar — меню и доставка, Най Янг">
-<meta property="og:description" content="Бургеры, тайская кухня, коктейли и шоты. Доставка по Най Янгу или самовывоз.">
+<meta property="og:description" content="Бургеры, тайская кухня, хот-пот, коктейли и пиво. Доставка по Най Янгу или самовывоз.">
 <meta property="og:image" content="https://afterwave-menu.aidar-crypto2000.workers.dev/assets/social/og-image.jpg">
 <meta property="og:image:secure_url" content="https://afterwave-menu.aidar-crypto2000.workers.dev/assets/social/og-image.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -36,13 +36,15 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Afterwave Moonshine Bar — menu & delivery, Nai Yang">
-<meta name="twitter:description" content="Burgers, Thai food, cocktails and shots. Delivery in Nai Yang or pickup.">
+<meta name="twitter:description" content="Burgers, Thai food, hot pot, cocktails and beer. Delivery in Nai Yang or pickup.">
 <meta name="twitter:image" content="https://afterwave-menu.aidar-crypto2000.workers.dev/assets/social/og-image.jpg">
 <meta name="twitter:image:alt" content="Afterwave Moonshine Bar — tiger chef, monkey and bear with shots">
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
 <link rel="manifest" href="/site.webmanifest">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
@@ -84,34 +86,54 @@ color:#1a0c02;background:linear-gradient(180deg,var(--gold),var(--ember) 60%,var
 .tab{flex:0 0 auto;scroll-snap-align:center;padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);font:500 16px var(--head);letter-spacing:.08em;text-transform:uppercase;color:var(--mute);transition:.25s}
 .tab.on{color:#1a0c02;border-color:transparent;background:linear-gradient(180deg,var(--gold),var(--ember));box-shadow:0 0 18px rgba(255,138,30,.4)}
 .grp{font:500 13px var(--head);letter-spacing:.3em;text-transform:uppercase;color:var(--ember);margin-bottom:10px}
-.add{width:42px;height:42px;border-radius:50%;font:700 26px/1 var(--head);color:#1a0c02;background:linear-gradient(180deg,var(--gold),var(--ember));box-shadow:0 0 16px rgba(255,138,30,.4)}
+.add{width:100%;height:48px;border-radius:999px;font:700 19px var(--head);letter-spacing:.08em;text-transform:uppercase;color:#1a0c02;background:linear-gradient(180deg,var(--gold),var(--ember));box-shadow:0 0 16px rgba(255,138,30,.4)}
 .step{display:flex;align-items:center;gap:6px}
 .step button{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--ember);color:var(--gold);font:700 20px/1 var(--head)}
 .step span{min-width:20px;text-align:center;font:700 18px var(--head)}
+.screen-main{position:relative;display:flex;flex-direction:column;height:100%;min-height:0;overflow:hidden}
 .cartbar{position:absolute;left:0;right:0;bottom:0;padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(0deg,var(--bg) 60%,transparent)}
 .cartbar[hidden]{display:none}
 .cartbar .btn{justify-content:space-between}
 /* deck */
 .head2{display:flex;justify-content:space-between;align-items:baseline;padding:14px 18px 10px;flex-shrink:0}
 .head2 .grp{margin:0}.cnt{font:500 14px var(--head);letter-spacing:.2em;color:var(--mute)}
-.deck{flex:1;min-height:0;display:flex;gap:14px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;padding:0 18px 96px;scroll-padding-inline:18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.deck::-webkit-scrollbar{display:none}.deck::after{content:"";flex:0 0 4px}
-.card{flex:0 0 82%;scroll-snap-align:start;display:flex;flex-direction:column;overflow:hidden;border-radius:34px 34px 10px 10px;background:linear-gradient(160deg,#1d130c,#0d0805);border:1.5px solid var(--line);box-shadow:0 12px 36px rgba(0,0,0,.55),0 0 40px rgba(255,120,20,.12);animation:rise .6s both}
-.pic{flex:1;min-height:0;position:relative;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,rgba(255,138,30,.4),rgba(255,138,30,.05) 70%)}
-.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pic .big{font-size:min(32vw,130px);filter:drop-shadow(0 0 24px rgba(255,138,30,.5))}
-.meta{display:flex;align-items:flex-end;gap:12px;padding:14px 16px 16px;flex-shrink:0;border-top:1px solid var(--line)}
+.deck{flex:1;min-height:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}
+.deck::-webkit-scrollbar{display:none}
+.cat-page{flex:0 0 100%;width:100%;scroll-snap-align:start;overflow-y:auto;overflow-x:hidden;padding:8px 18px 110px;display:flex;flex-direction:column;gap:14px;-webkit-overflow-scrolling:touch;overscroll-behavior-y:contain}
+.cat-page::-webkit-scrollbar{display:none}
+.card{flex:0 0 auto;width:100%;display:flex;flex-direction:column;overflow:hidden;border-radius:22px;background:linear-gradient(160deg,#1d130c,#0d0805);border:1.5px solid var(--line);box-shadow:0 10px 28px rgba(0,0,0,.5),0 0 28px rgba(255,120,20,.1);animation:rise .45s both}
+.card .pic{width:100%;min-height:200px;max-height:240px;aspect-ratio:16/10;border-radius:20px 20px 0 0}
+.pic{flex:0 0 auto;min-height:200px;max-height:260px;position:relative;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,rgba(255,138,30,.4),rgba(255,138,30,.05) 70%);overflow:hidden}
+.pic{overflow:hidden}
+.pic img{position:absolute;z-index:1;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center}
+.pic img.bg{filter:blur(28px) brightness(.6) saturate(1.2);transform:scale(1.2);object-fit:cover}
+.pic img.fg{inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;-webkit-mask-image:none;mask-image:none;transform:none}
+.pic .big{position:relative;z-index:0;font-size:min(18vw,72px);filter:drop-shadow(0 0 18px rgba(255,138,30,.45));opacity:.9}
+.meta{display:flex;align-items:flex-end;gap:12px;padding:14px 16px 16px;flex-shrink:0;border-top:1px solid var(--line)}.meta .ctl{width:100%}.meta.col .ctl{width:100%}
 .meta .t{flex:1;min-width:0}
 .meta h3{font:500 25px/1.05 var(--head);letter-spacing:.03em;text-transform:uppercase}
 .meta p{font-size:14px;color:var(--mute);margin-top:4px}
+.meta{flex-direction:column;align-items:stretch;gap:10px}.meta.col{flex-direction:column;align-items:stretch;gap:12px}
+.meta.col .ctl{display:block}
+.pick{width:100%;height:48px;border-radius:999px;font:700 19px var(--head);letter-spacing:.08em;text-transform:uppercase;color:#1a0c02;background:linear-gradient(180deg,var(--gold),var(--ember));box-shadow:0 0 16px rgba(255,138,30,.4);white-space:nowrap}
+.pick:active{transform:scale(.98)}
+.pic[data-a]{cursor:pointer}
+.line .ctl{flex:0 0 104px;display:flex;justify-content:flex-end}
 .pr{font:700 28px var(--head);color:var(--gold);margin-top:6px}
-.card .add{width:54px;height:54px;font-size:34px}.card .step button{width:40px;height:40px}.card .step span{font-size:22px}
+.halal{position:absolute;top:8px;right:8px;z-index:2;width:52px;height:52px;display:block;background:transparent;border:0;padding:0;filter:drop-shadow(0 2px 8px rgba(0,0,0,.55))}
+.halal img{width:100%;height:100%;object-fit:contain;display:block;background:transparent}
+.beer-upsell{position:absolute;left:18px;right:18px;bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:15;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:14px;background:linear-gradient(135deg,#2a1808,#1a0e06);border:1.5px solid var(--ember);box-shadow:0 8px 24px rgba(0,0,0,.5);pointer-events:auto}
+.beer-upsell[hidden]{display:none!important}
+.beer-upsell button{flex:1;padding:12px 12px;border-radius:12px;font:700 13px var(--head);border:0;cursor:pointer;white-space:nowrap;text-align:center}
+.beer-upsell .beer-no{background:transparent;color:var(--cream);border:1.5px solid rgba(255,138,30,.45)}
+.beer-upsell .beer-yes{background:var(--ember);color:#0a0604}
+
+.card .step{width:100%;justify-content:center}.card .step button{width:40px;height:40px}.card .step span{font-size:22px;min-width:28px;text-align:center}
 /* lang */
-.lang{position:fixed;top:calc(16px + env(safe-area-inset-top,0px));right:max(18px,calc(50% - 222px));z-index:20;display:inline-grid;grid-template-columns:1fr 1fr;padding:2px;border-radius:999px;border:1px solid rgba(255,138,30,.6);background:rgba(10,6,4,.75);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:0 4px 16px rgba(0,0,0,.4)}
-.lang::before{content:"";position:absolute;top:2px;bottom:2px;left:2px;width:calc(50% - 2px);border-radius:999px;background:linear-gradient(180deg,var(--gold),var(--ember));transition:transform .45s cubic-bezier(.22,1,.36,1)}
-.lang[data-l="en"]::before{transform:translateX(100%)}
-.lang button{position:relative;z-index:1;min-width:42px;padding:4px 0 5px;font:700 14px var(--head);letter-spacing:.1em;color:var(--mute);transition:color .3s}
-.lang button.on{color:#1a0c02}
+.lang{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:max(12px,calc(50% - 230px));z-index:30;display:inline-flex;align-items:center;gap:0;padding:3px;border-radius:999px;border:1px solid rgba(255,138,30,.55);background:rgba(10,6,4,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 4px 18px rgba(0,0,0,.45)}
+.lang button{position:relative;z-index:1;min-width:40px;padding:6px 10px;font:700 13px var(--head);letter-spacing:.06em;color:var(--mute);background:transparent;border:0;border-radius:999px;cursor:pointer;transition:color .25s,background .25s}
+.lang button.on{color:#1a0c02;background:linear-gradient(180deg,var(--gold),var(--ember));box-shadow:0 2px 8px rgba(255,138,30,.35)}
+.lang button:not(.on):hover{color:var(--cream)}
 /* sheet */
 .sheet{position:absolute;inset:0;z-index:10;display:none}
 .sheet.open{display:block}
@@ -150,60 +172,177 @@ label{display:block;margin:12px 0 5px;font-size:14px;color:var(--mute)}
 </style>
 </head>
 <body>
-<div class="lang" id="lang" data-l="ru" role="group" aria-label="Language"><button type="button" data-l="ru" onclick="setLang('ru')">RU</button><button type="button" data-l="en" onclick="setLang('en')">EN</button></div>
+<div class="lang" id="lang" data-l="ru" role="group" aria-label="Language">
+  <button type="button" data-l="ru" onclick="setLang('ru')">RU</button>
+  <button type="button" data-l="en" onclick="setLang('en')">EN</button>
+  <button type="button" data-l="th" onclick="setLang('th')">TH</button>
+</div>
 <div id="app"></div>
 <script>
 const LOGO="assets/logo.jpg";
-const ORDER_ENDPOINT="/api/order"; // сюда адрес бэкенда (например /api/order) — без него заявка только показывается на экране
 const CATS=[
  {id:"burgers",name:"Бургеры",group:"Еда",items:[
-  {id:"b1",img:"assets/dishes/b1.jpg",n:"Beef Burger",d:"Говядина, чеддер, карамелизированный лук. Чипсы в сете",p:250,i:"🍔"}]},
- {id:"thai",name:"Тайская кухня",group:"Еда",items:[
-  {id:"t1",img:"assets/dishes/t1.jpg",n:"Кра пао · курица",d:"Рис, базилик, чили",p:80,i:"🍚"},
-  {id:"t2",img:"assets/dishes/t2.jpg",n:"Кра пао · свинина",d:"Рис, базилик, чили",p:90,i:"🍚"},
-  {id:"t3",img:"assets/dishes/t3.jpg",n:"Кра пао · говядина",d:"Рис, базилик, чили",p:100,i:"🍚"},
-  {id:"t4",img:"assets/dishes/t4.jpg",n:"Кра пао · морепродукты",d:"Рис, базилик, чили",p:120,i:"🦐"},
-  {id:"t5",img:"assets/dishes/t5.jpg",n:"Кра пао · микс морепродуктов",d:"Рис, базилик, чили",p:150,i:"🦑"},
-  {id:"t6",img:"assets/dishes/t6.jpg",n:"Яйцо жареное",d:"Добавка к блюду",p:10,i:"🍳"},
-  {id:"t7",img:"assets/dishes/t7.jpg",n:"Омлет",d:"Добавка к блюду",p:20,i:"🥚"}]},
+  {id:"b1",img:"assets/dishes/burger.jpg",n:"Signature Beef Burger",d:"Сочная говядина, чеддер, карамелизированный лук + чипсы",p:250,i:"🍔",pos:"62% 50%",halal:true}]},
+ {id:"main",name:"Основные блюда",group:"Еда",items:[
+  {id:"kp",img:"assets/dishes/basil-rice.jpg",n:"Кра пао (Krapao)",d:"Острый тайский базилик с рисом",v:[
+    {id:"kp1",n:"Кра пао · курица",l:"Курица",p:90,halal:true},
+    {id:"kp3",n:"Кра пао · говядина",l:"Говядина",p:100,halal:true},
+    {id:"kp2",n:"Кра пао · свинина",l:"Свинина",p:90},
+    {id:"kp4",n:"Кра пао · кальмар",l:"Кальмар",p:120}
+  ],i:"🍚"},
+  {id:"rc",img:"assets/dishes/red-curry.jpg",n:"Красное карри",d:"Ароматное красное карри",v:[
+    {id:"rc1",n:"Красное карри · курица",l:"Курица",p:90,halal:true},
+    {id:"rc3",n:"Красное карри · говядина",l:"Говядина",p:100,halal:true},
+    {id:"rc2",n:"Красное карри · свинина",l:"Свинина",p:90},
+    {id:"rc4",n:"Красное карри · кальмар",l:"Кальмар",p:120}
+  ],i:"🍛"},
+  {id:"fr",img:"assets/dishes/fried-rice.jpg",n:"Жареный рис",d:"Классический тайский жареный рис",v:[
+    {id:"fr1",n:"Жареный рис · курица",l:"Курица",p:90,halal:true},
+    {id:"fr3",n:"Жареный рис · говядина",l:"Говядина",p:100,halal:true},
+    {id:"fr2",n:"Жареный рис · свинина",l:"Свинина",p:90},
+    {id:"fr4",n:"Жареный рис · кальмар",l:"Кальмар",p:120}
+  ],i:"🍳"},
+  {id:"sk",img:"assets/dishes/sukiya.jpg",n:"Сукияки",d:"",v:[
+    {id:"sk1",n:"Сукияки · курица",l:"Курица",p:90,halal:true},
+    {id:"sk3",n:"Сукияки · говядина",l:"Говядина",p:100,halal:true},
+    {id:"sk2",n:"Сукияки · свинина",l:"Свинина",p:90},
+    {id:"sk4",n:"Сукияки · кальмар",l:"Кальмар",p:120}
+  ],i:"🍜"}]},
+ {id:"salads",name:"Салаты",group:"Еда",items:[
+  {id:"sa1",img:"assets/dishes/papaya-salad.jpg",n:"Сом Там (Папайя)",d:"Свежий острый салат из зелёной папайи",p:70,i:"🥗"},
+  {id:"sm",img:"assets/dishes/larb.jpg",n:"Ларб (салат с фаршем)",d:"",v:[
+    {id:"sm2",n:"Ларб · курица",l:"Курица",p:90,halal:true},
+    {id:"sm3",n:"Ларб · говядина",l:"Говядина",p:100,halal:true},
+    {id:"sm1",n:"Ларб · свинина",l:"Свинина",p:90}
+  ],i:"🥗"}]},
  {id:"snacks",name:"Закуски",group:"Еда",items:[
-  {id:"s1",img:"assets/dishes/s1.jpg",n:"Картофель фри",d:"Хрустящий, с соусом",p:90,i:"🍟"},
-  {id:"s2",img:"assets/dishes/s2.jpg",n:"Куриные крылья",d:"Острый BBQ",p:180,i:"🍗"},
-  {id:"s3",img:"assets/dishes/s3.jpg",n:"Начос",d:"Сыр, сальса",p:160,i:"🧀"}]},
+  {id:"sn1",img:"assets/dishes/fries.jpg",n:"Картофель фри",d:"Хрустящий, идеально к пиву",p:80,i:"🍟"}]},
+ {id:"hotpot",name:"Хот-пот",group:"Еда",items:[
+  {id:"hp",img:"assets/dishes/hot-pot.jpg",n:"Хот-пот",d:"Горячий сет для компании",v:[
+    {id:"hp1",n:"Хот-пот · малый сет",l:"Малый сет",p:179},
+    {id:"hp2",n:"Хот-пот · большой сет",l:"Большой сет",p:339}
+  ],i:"🍲"}]},
+ {id:"grill",name:"Гриль",group:"Еда",items:[
+  {id:"gr",img:"assets/dishes/grill.jpg",n:"Гриль",d:"Свежее мясо на углях",v:[
+    {id:"gr1",n:"Острая курица гриль",l:"Острая курица",p:120,halal:true},
+    {id:"gr3",n:"Говядина гриль",l:"Говядина",p:130,halal:true},
+    {id:"gr2",n:"Свинина гриль",l:"Свинина",p:120}
+  ],i:"🍗"}]},
  {id:"cocktails",name:"Коктейли",group:"Напитки",items:[
-  {id:"c1",img:"assets/dishes/c1.jpg",n:"Moonshine Sour",d:"Авторский, цитрус",p:220,i:"🍹"},
-  {id:"c2",img:"assets/dishes/c2.jpg",n:"Afterwave Mule",d:"Имбирь, лайм",p:240,i:"🍸"},
-  {id:"c3",img:"assets/dishes/c3.jpg",n:"Mojito",d:"Мята, лайм, ром",p:200,i:"🍃"}]},
- {id:"shots",name:"Шоты",group:"Напитки",items:[
-  {id:"h1",img:"assets/dishes/h1.jpg",n:"Moonshine Shot",d:"Фирменный",p:80,i:"🥃"},
-  {id:"h2",img:"assets/dishes/h2.jpg",n:"Сет 3 шота",d:"Как на логотипе",p:220,i:"🔥"}]},
- {id:"beer",name:"Пиво",group:"Напитки",items:[
-  {id:"r1",img:"assets/dishes/r1.jpg",n:"Chang",d:"0,64 л",p:90,i:"🍺"},
-  {id:"r2",img:"assets/dishes/r2.jpg",n:"Singha",d:"0,33 л",p:80,i:"🍺"},
-  {id:"r3",img:"assets/dishes/r3.jpg",n:"Heineken",d:"0,33 л",p:110,i:"🍻"}]},
+  {id:"ck1",img:"assets/dishes/mojito.jpg",n:"Mojito",d:"Свежая мята и лайм",p:200,i:"🍃",pos:"57% 50%"},
+  {id:"ck2",img:"assets/dishes/mai-tai.jpg",n:"Mai Tai",d:"Классика тропиков",p:200,i:"🍹",pos:"52% 50%"},
+  {id:"ck3",img:"assets/dishes/tequila-sunrise.jpg",n:"Tequila Sunrise",d:"Яркий закат в бокале",p:200,i:"🌅"},
+  {id:"ck4",img:"assets/dishes/pina-colada.jpg",n:"Pina Colada",d:"Кокос и ананас",p:200,i:"🥥",pos:"60% 50%"},
+  {id:"ck5",img:"assets/dishes/margarita.jpg",n:"Margarita",d:"Солёная классика",p:200,i:"🍸",pos:"58% 50%"}]},
+ {id:"beerwine",name:"Пиво и вино",group:"Напитки",items:[
+  {id:"br",img:"assets/dishes/beer.jpg",n:"Пиво",d:"Ледяное тайское и импорт",v:[
+    {id:"br1",n:"Chang",l:"Chang",p:80},
+    {id:"br2",n:"Singha",l:"Singha",p:80},
+    {id:"br3",n:"Leo",l:"Leo",p:80},
+    {id:"br4",n:"San Miguel",l:"San Miguel",p:120}
+  ],i:"🍺",fit:"contain"},
+  {id:"wn",img:"assets/dishes/wine.jpg",n:"Вино",d:"Белое и красное",v:[
+    {id:"wn1",n:"Белое вино",l:"Белое",p:200},
+    {id:"wn2",n:"Красное вино",l:"Красное",p:200}
+  ],i:"🍷",fit:"contain"}]},
+ {id:"spirits",name:"Крепкое + миксеры",group:"Напитки",items:[
+  {id:"s12",img:"assets/dishes/spirits-120.jpg",n:"Thai Spirits",d:"Sangsom & Hong Thong",v:[
+    {id:"sp1",n:"Sangsom",l:"Sangsom",p:120},
+    {id:"sp2",n:"Hong Thong",l:"Hong Thong",p:120}
+  ],i:"🥃",fit:"contain"},
+  {id:"s15",img:"assets/dishes/spirits-150.jpg",n:"Premium Spirits",d:"Импортный выбор",v:[
+    {id:"sp3",n:"Джин",l:"Джин",p:150},
+    {id:"sp4",n:"Белый ром",l:"Белый ром",p:150},
+    {id:"sp5",n:"Водка",l:"Водка",p:150},
+    {id:"sp6",n:"Текила",l:"Текила",p:150},
+    {id:"sp7",n:"Jack Daniel's",l:"Jack Daniel's",p:150},
+    {id:"sp8",n:"Bombay",l:"Bombay",p:150},
+    {id:"sp9",n:"Jameson",l:"Jameson",p:150}
+  ],i:"🥃",fit:"contain"}]},
  {id:"soft",name:"Безалкогольное",group:"Напитки",items:[
-  {id:"f1",img:"assets/dishes/f1.jpg",n:"Вода",d:"0,6 л",p:20,i:"💧"},
-  {id:"f2",img:"assets/dishes/f2.jpg",n:"Cola",d:"0,33 л",p:40,i:"🥤"},
-  {id:"f3",img:"assets/dishes/f3.jpg",n:"Лайм-фреш",d:"Свежевыжатый",p:70,i:"🍋"}]},
- {id:"other",name:"Прочее",group:"Прочее",items:[
-  {id:"o2",img:"assets/dishes/o2.jpg",n:"Зажигалка",d:"Moonshine",p:50,i:"⚡"}]}
+  {id:"sd",img:"assets/dishes/soft.jpg",n:"Напитки",d:"Газировка и энергия",v:[
+    {id:"sd1",n:"Coke",l:"Coke",p:50},
+    {id:"sd2",n:"Coke Zero",l:"Coke Zero",p:50},
+    {id:"sd3",n:"Sprite",l:"Sprite",p:50},
+    {id:"sd4",n:"Schweppes",l:"Schweppes",p:50},
+    {id:"sd5",n:"Тоник",l:"Тоник",p:50},
+    {id:"sd6",n:"Содовая",l:"Содовая",p:50},
+    {id:"sd7",n:"Red Bull",l:"Red Bull",p:50},
+    {id:"sd8",n:"Вода",l:"Вода",p:30},
+    {id:"sd9",n:"Лёд",l:"Лёд",p:30}
+  ],i:"🥤",fit:"contain"},
+  {id:"jc",img:"assets/dishes/juices.jpg",n:"Свежие соки",d:"100% натуральные",v:[
+    {id:"jc1",n:"Апельсиновый сок",l:"Апельсиновый",p:60},
+    {id:"jc2",n:"Ананасовый сок",l:"Ананасовый",p:60}
+  ],i:"🍊",fit:"contain"}]}
 ];
-const ALL=Object.fromEntries(CATS.flatMap(c=>c.items.map(i=>[i.id,i])));
-const EN={i:{b1:["Beef Burger","Beef patty, cheddar, caramelized onion. Chips in the set"],t1:["Krapao · chicken","Rice, basil, chili"],t2:["Krapao · pork","Rice, basil, chili"],t3:["Krapao · beef","Rice, basil, chili"],t4:["Krapao · seafood","Rice, basil, chili"],t5:["Krapao · mixed seafood","Rice, basil, chili"],t6:["Fried egg","Add-on to a dish"],t7:["Omelette","Add-on to a dish"],s1:["French fries","Crispy, with sauce"],s2:["Chicken wings","Spicy BBQ"],s3:["Nachos","Cheese, salsa"],c1:["Moonshine Sour","Signature, citrus"],c2:["Afterwave Mule","Ginger, lime"],c3:["Mojito","Mint, lime, rum"],h1:["Moonshine Shot","Signature"],h2:["Shot set ×3","Like on the logo"],r1:["Chang","0.64 l"],r2:["Singha","0.33 l"],r3:["Heineken","0.33 l"],f1:["Water","0.6 l"],f2:["Cola","0.33 l"],f3:["Lime fresh","Freshly squeezed"],o2:["Lighter","Moonshine"]},
-c:{burgers:"Burgers",thai:"Thai food",snacks:"Snacks",cocktails:"Cocktails",shots:"Shots",beer:"Beer",soft:"Soft drinks",other:"Other"},g:{"Еда":"Food","Напитки":"Drinks","Прочее":"Other"}};
-const T={ru:{title:"Afterwave Moonshine Bar — меню, Най Янг, Пхукет | Доставка",desc:"Меню Afterwave Moonshine Bar, Най Янг, Пхукет. Доставка по Най Янгу или самовывоз.",view:"Посмотреть меню",tagline:"Най Янг · Пхукет",cart:"Корзина",empty:"Пока пусто",total:"Итого",delivery:"Доставка",pickup:"Забрать в заведении",close:"Закрыть",remove:"Убрать",add:"Добавить",toCart:"В корзину",phone:"Номер телефона",map:"Ссылка на Google Maps",ny:"Доставка только по Най Янгу",when:"Когда будет готово",asap:"Как можно скорее",later:"К определённому времени",back:"Назад",order:"Заказать",sending:"Отправляем…",errPhone:"Проверьте номер телефона",errMap:"Нужна ссылка на Google Maps",errTime:"Укажите время",fail:"Не удалось отправить. Попробуйте ещё раз.",thanks:"Спасибо!",thanksText:"Мы обрабатываем ваш заказ. Менеджер в ближайшее время свяжется с вами.",home:"В начало"},
-en:{title:"Afterwave Moonshine Bar — menu, Nai Yang, Phuket | Delivery",desc:"Afterwave Moonshine Bar menu, Nai Yang, Phuket. Delivery within Nai Yang or pickup.",view:"View menu",tagline:"Nai Yang · Phuket",cart:"Cart",empty:"Nothing here yet",total:"Total",delivery:"Delivery",pickup:"Pickup at the venue",close:"Close",remove:"Remove",add:"Add",toCart:"Add to cart",phone:"Phone number",map:"Google Maps link",ny:"Delivery only within Nai Yang",when:"Ready at",asap:"As soon as possible",later:"At a specific time",back:"Back",order:"Place order",sending:"Sending…",errPhone:"Check your phone number",errMap:"A Google Maps link is required",errTime:"Choose a time",fail:"Couldn't send. Please try again.",thanks:"Thank you!",thanksText:"We're processing your order. A manager will contact you shortly.",home:"Back to start"}};
-function detectLang(){try{const l=localStorage.getItem("lang");if(l==="ru"||l==="en")return l}catch{}return /^(ru|uk|be|kk|uz|ky|tg|hy|az|ka)/i.test(navigator.language||"")?"ru":"en"}
+const ALL={},PROD={};
+for(const c of CATS)for(const i of c.items){if(i.v)for(const v of i.v){ALL[v.id]=v;PROD[v.id]=i}else ALL[i.id]=i}
+const EN={i:{
+b1:["Signature Beef Burger","Juicy beef, cheddar, caramelized onion + chips"],
+kp:["Krapao","Spicy Thai basil with rice"],kp1:["Krapao · chicken","Chicken"],kp3:["Krapao · beef","Beef"],kp2:["Krapao · pork","Pork"],kp4:["Krapao · squid","Squid"],
+rc:["Red curry","Aromatic red curry"],rc1:["Red curry · chicken","Chicken"],rc3:["Red curry · beef","Beef"],rc2:["Red curry · pork","Pork"],rc4:["Red curry · squid","Squid"],
+fr:["Fried rice","Classic Thai fried rice"],fr1:["Fried rice · chicken","Chicken"],fr3:["Fried rice · beef","Beef"],fr2:["Fried rice · pork","Pork"],fr4:["Fried rice · squid","Squid"],
+sk:["Sukiya",""],sk1:["Sukiya · chicken","Chicken"],sk3:["Sukiya · beef","Beef"],sk2:["Sukiya · pork","Pork"],sk4:["Sukiya · squid","Squid"],
+sa1:["Som Tum (Papaya)","Fresh spicy green papaya salad"],sa2:["Som Tum with pla ra","With fermented fish sauce"],
+sm:["Larb (minced salad)",""],sm2:["Larb · chicken","Chicken"],sm3:["Larb · beef","Beef"],sm1:["Larb · pork","Pork"],
+sn1:["French fries","Crispy, perfect with beer"],
+hp:["Hot pot","Hot set for sharing"],hp1:["Hot pot · small set","Small set"],hp2:["Hot pot · large set","Large set"],
+gr:["Grill","Fresh meat on charcoal"],gr1:["Spicy grilled chicken","Spicy chicken"],gr3:["Grilled beef","Beef"],gr2:["Grilled pork","Pork"],
+ck1:["Mojito","Fresh mint & lime"],ck2:["Mai Tai","Tropical classic"],ck3:["Tequila Sunrise","Bright sunset in a glass"],ck4:["Pina Colada","Coconut & pineapple"],ck5:["Margarita","Salty classic"],
+br:["Beer","Ice-cold Thai & import"],br1:["Chang","Chang"],br2:["Singha","Singha"],br3:["Leo","Leo"],br4:["San Miguel","San Miguel"],
+wn:["Wine","White & red"],wn1:["White wine","White"],wn2:["Red wine","Red"],
+s12:["Thai Spirits","Sangsom & Hong Thong"],sp1:["Sangsom","Sangsom"],sp2:["Hong Thong","Hong Thong"],
+s15:["Premium Spirits","Imported selection"],sp3:["Gin","Gin"],sp4:["White rum","White rum"],sp5:["Vodka","Vodka"],sp6:["Tequila","Tequila"],sp7:["Jack Daniel's","Jack Daniel's"],sp8:["Bombay","Bombay"],sp9:["Jameson","Jameson"],
+sd:["Soft drinks","Soda & energy"],sd1:["Coke","Coke"],sd2:["Coke Zero","Coke Zero"],sd3:["Sprite","Sprite"],sd4:["Schweppes","Schweppes"],sd5:["Tonic","Tonic"],sd6:["Soda","Soda"],sd7:["Red Bull","Red Bull"],sd8:["Water","Water"],sd9:["Ice","Ice"],
+jc:["Fresh juices","100% natural"],jc1:["Orange juice","Orange"],jc2:["Pineapple juice","Pineapple"]
+},
+c:{burgers:"Burgers",main:"Main dishes",salads:"Salads",snacks:"Snacks",hotpot:"Hot pot",grill:"Grill",cocktails:"Cocktails",beerwine:"Beer & wine",spirits:"Spirits + mixers",soft:"Soft drinks"},
+g:{"Еда":"Food","Напитки":"Drinks"}};
+
+const TH={i:{
+b1:["Signature Beef Burger","เนื้อวัวฉ่ำ ชีสเชddar หอมคาราเมล + มันฝรั่ง"],
+kp:["กะเพรา","กะเพราไทยเผ็ดกับข้าว"],kp1:["กะเพรา · ไก่","ไก่"],kp3:["กะเพรา · เนื้อ","เนื้อ"],kp2:["กะเพรา · หมู","หมู"],kp4:["กะเพรา · ปลาหมึก","ปลาหมึก"],
+rc:["แกงแดง","แกงแดงหอม"],rc1:["แกงแดง · ไก่","ไก่"],rc3:["แกงแดง · เนื้อ","เนื้อ"],rc2:["แกงแดง · หมู","หมู"],rc4:["แกงแดง · ปลาหมึก","ปลาหมึก"],
+fr:["ข้าวผัด","ข้าวผัดไทยคลาสสิก"],fr1:["ข้าวผัด · ไก่","ไก่"],fr3:["ข้าวผัด · เนื้อ","เนื้อ"],fr2:["ข้าวผัด · หมู","หมู"],fr4:["ข้าวผัด · ปลาหมึก","ปลาหมึก"],
+sk:["สุกี้ยากี้",""],sk1:["สุกี้ · ไก่","ไก่"],sk3:["สุกี้ · เนื้อ","เนื้อ"],sk2:["สุกี้ · หมู","หมู"],sk4:["สุกี้ · ปลาหมึก","ปลาหมึก"],
+sa1:["ส้มตำ","ส้มตำมะละกอสดเผ็ด"],sa2:["ส้มตำปลาร้า","กับน้ำปลาร้า"],
+sm:["ลาบ",""],sm2:["ลาบ · ไก่","ไก่"],sm3:["ลาบ · เนื้อ","เนื้อ"],sm1:["ลาบ · หมู","หมู"],
+sn1:["เฟรนช์ฟรายส์","กรอบ เข้ากับเบียร์"],
+hp:["หม้อไฟ","ชุดร้อนสำหรับแบ่งปัน"],hp1:["หม้อไฟ · ชุดเล็ก","ชุดเล็ก"],hp2:["หม้อไฟ · ชุดใหญ่","ชุดใหญ่"],
+gr:["ปิ้งย่าง","เนื้อสดบนถ่าน"],gr1:["ไก่ปิ้งเผ็ด","ไก่เผ็ด"],gr3:["เนื้อปิ้ง","เนื้อ"],gr2:["หมูปิ้ง","หมู"],
+ck1:["Mojito","มิ้นต์และมะนาวสด"],ck2:["Mai Tai","คลาสสิกเขตร้อน"],ck3:["Tequila Sunrise","พระอาทิตย์ตกในแก้ว"],ck4:["Pina Colada","มะพร้าวและสับปะรด"],ck5:["Margarita","คลาสสิกเค็ม"],
+br:["เบียร์","เย็นจัด ไทยและนำเข้า"],br1:["Chang","Chang"],br2:["Singha","Singha"],br3:["Leo","Leo"],br4:["San Miguel","San Miguel"],
+wn:["ไวน์","ขาวและแดง"],wn1:["ไวน์ขาว","ขาว"],wn2:["ไวน์แดง","แดง"],
+s12:["Thai Spirits","Sangsom & Hong Thong"],sp1:["Sangsom","Sangsom"],sp2:["Hong Thong","Hong Thong"],
+s15:["Premium Spirits","เลือกนำเข้า"],sp3:["Gin","Gin"],sp4:["White rum","White rum"],sp5:["Vodka","Vodka"],sp6:["Tequila","Tequila"],sp7:["Jack Daniel's","Jack Daniel's"],sp8:["Bombay","Bombay"],sp9:["Jameson","Jameson"],
+sd:["เครื่องดื่ม"],sd1:["Coke","Coke"],sd2:["Coke Zero","Coke Zero"],sd3:["Sprite","Sprite"],sd4:["Schweppes","Schweppes"],sd5:["Tonic","Tonic"],sd6:["Soda","Soda"],sd7:["Red Bull","Red Bull"],sd8:["Water","Water"],sd9:["Ice","Ice"],
+jc:["น้ำผลไม้สด","100% ธรรมชาติ"],jc1:["น้ำส้ม","ส้ม"],jc2:["น้ำสับปะรด","สับปะรด"]
+},
+c:{burgers:"เบอร์เกอร์",main:"จานหลัก",salads:"สลัด",snacks:"ของว่าง",hotpot:"หม้อไฟ",grill:"ปิ้งย่าง",cocktails:"ค็อกเทล",beerwine:"เบียร์และไวน์",spirits:"สุรา + มิกเซอร์",soft:"เครื่องดื่มไม่มีแอลกอฮอล์"},
+g:{"Еда":"อาหาร","Напитки":"เครื่องดื่ม"}};
+
+const T={
+ru:{title:"Afterwave Moonshine Bar — меню, Най Янг, Пхукет | Доставка",desc:"Меню Afterwave Moonshine Bar, Най Янг, Пхукет. Доставка по Най Янгу или самовывоз.",view:"Посмотреть меню",tagline:"Най Янг · Пхукет",choose:"Выбрать",done:"Готово",from:"от",cart:"Корзина",empty:"Пока пусто",total:"Итого",delivery:"Доставка",pickup:"Забрать в заведении",close:"Закрыть",remove:"Убрать",add:"Добавить",toCart:"В корзину",phone:"Номер телефона",map:"Ссылка на Google Maps",ny:"Доставка только по Най Янгу",when:"Когда будет готово",asap:"Как можно скорее",later:"К определённому времени",back:"Назад",order:"Заказать",sending:"Отправляем…",errPhone:"Проверьте номер телефона",errMap:"Нужна ссылка на Google Maps",errTime:"Укажите время",fail:"Не удалось отправить. Попробуйте ещё раз.",thanks:"Спасибо!",thanksText:"Мы обрабатываем ваш заказ. Менеджер в ближайшее время свяжется с вами.",home:"В начало",beerAsk:"Хотите пиво к блюду?",beerNo:"Нет, спасибо",beerYes:"Да, добавить пиво"},
+en:{title:"Afterwave Moonshine Bar — menu, Nai Yang, Phuket | Delivery",desc:"Afterwave Moonshine Bar menu, Nai Yang, Phuket. Delivery within Nai Yang or pickup.",view:"View menu",tagline:"Nai Yang · Phuket",choose:"Choose",done:"Done",from:"from",cart:"Cart",empty:"Nothing here yet",total:"Total",delivery:"Delivery",pickup:"Pickup at the venue",close:"Close",remove:"Remove",add:"Add",toCart:"Add to cart",phone:"Phone number",map:"Google Maps link",ny:"Delivery only within Nai Yang",when:"Ready at",asap:"As soon as possible",later:"At a specific time",back:"Back",order:"Place order",sending:"Sending…",errPhone:"Check your phone number",errMap:"A Google Maps link is required",errTime:"Choose a time",fail:"Couldn't send. Please try again.",thanks:"Thank you!",thanksText:"We're processing your order. A manager will contact you shortly.",home:"Back to start",beerAsk:"Would you like a beer with that?",beerNo:"No, thanks",beerYes:"Yes, add beer"},
+th:{title:"Afterwave Moonshine Bar — เมนู หาดในยาง ภูเก็ต | เดลิเวอรี่",desc:"เมนู Afterwave Moonshine Bar หาดในยาง ภูเก็ต เดลิเวอรี่ในในยางหรือรับที่ร้าน",view:"ดูเมนู",tagline:"หาดในยาง · ภูเก็ต",choose:"เลือก",done:"เสร็จ",from:"จาก",cart:"ตะกร้า",empty:"ยังว่าง",total:"รวม",delivery:"เดลิเวอรี่",pickup:"รับที่ร้าน",close:"ปิด",remove:"ลบ",add:"เพิ่ม",toCart:"ใส่ตะกร้า",phone:"เบอร์โทร",map:"ลิงก์ Google Maps",ny:"เดลิเวอรี่เฉพาะในยาง",when:"พร้อมเมื่อไหร่",asap:"เร็วที่สุด",later:"เวลาที่กำหนด",back:"กลับ",order:"สั่ง",sending:"กำลังส่ง…",errPhone:"ตรวจสอบเบอร์โทร",errMap:"ต้องมีลิงก์ Google Maps",errTime:"เลือกเวลา",fail:"ส่งไม่สำเร็จ ลองอีกครั้ง",thanks:"ขอบคุณ!",thanksText:"เรากำลังดำเนินการคำสั่ง เจ้าหน้าที่จะติดต่อเร็วๆ นี้",home:"กลับหน้าแรก",beerAsk:"ต้องการเบียร์กับอาหารไหม?",beerNo:"ไม่ ขอบคุณ",beerYes:"ใช่ เพิ่มเบียร์"}
+};
+function detectLang(){try{const l=localStorage.getItem("lang");if(l==="ru"||l==="en"||l==="th")return l}catch{}const nav=(navigator.language||"").toLowerCase();if(nav.startsWith("th"))return "th";if(/^(ru|uk|be|kk|uz|ky|tg|hy|az|ka)/.test(nav))return "ru";return "en"}
 let LANG=detectLang();
-const t=k=>T[LANG][k];
-const nm=i=>LANG==="en"?EN.i[i.id][0]:i.n, ds=i=>LANG==="en"?EN.i[i.id][1]:i.d, cname=c=>LANG==="en"?EN.c[c.id]:c.name, gn=c=>LANG==="en"?EN.g[c.group]:c.group;
+const t=k=>T[LANG][k]||T.en[k]||k;
+const nm=i=>{if(LANG==="en")return (EN.i[i.id]||[i.n])[0];if(LANG==="th")return (TH.i[i.id]||[i.n])[0];return i.n};
+const lb=v=>{if(LANG==="en")return (EN.i[v.id]||[v.l,v.l])[1];if(LANG==="th")return (TH.i[v.id]||[v.l,v.l])[1];return v.l};
+const ds=i=>{const src=LANG==="en"?EN.i:LANG==="th"?TH.i:null;const d=src&&src[i.id]?src[i.id][1]:i.d;return d||(i.v?i.v.map(lb).join(", "):"")};
+const cname=c=>{if(LANG==="en")return EN.c[c.id]||c.name;if(LANG==="th")return TH.c[c.id]||c.name;return c.name};
+const gn=c=>{if(LANG==="en")return EN.g[c.group]||c.group;if(LANG==="th")return TH.g[c.group]||c.group;return c.group};
+
 function paintMeta(){document.documentElement.lang=LANG;document.title=t("title");const d=document.querySelector('meta[name="description"]');if(d)d.content=t("desc")}
 function paintLang(){const el=document.getElementById("lang");if(!el)return;el.dataset.l=LANG;el.querySelectorAll("button").forEach(b=>b.classList.toggle("on",b.dataset.l===LANG))}
 function setLang(l){if(l===LANG)return;LANG=l;try{localStorage.setItem("lang",l)}catch{}paintMeta();paintLang();
  const tb=document.getElementById("tabs"),dk=document.getElementById("list"),a=tb?tb.scrollLeft:0,b=dk?dk.scrollLeft:0;
  render();const tb2=document.getElementById("tabs"),dk2=document.getElementById("list");if(tb2)tb2.scrollLeft=a;if(dk2)dk2.scrollLeft=b}
 paintMeta();paintLang();
-const S={screen:"welcome",cat:CATS[0].id,cart:{},sheet:null,mode:null,phone:"",map:"",when:"asap",time:"",touched:false,sending:false,fail:false};
+const S={screen:"welcome",cat:CATS[0].id,cart:{},sheet:null,prod:null,beerShown:false};
 const $=document.getElementById("app");
 const money=n=>n.toLocaleString("en-US")+" ฿";
 const qty=()=>Object.values(S.cart).reduce((a,b)=>a+b,0);
@@ -212,92 +351,145 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"
 
 function ctl(id){const q=S.cart[id]||0;
  return q?`<div class="step"><button data-a="dec" data-id="${id}" aria-label="${t("remove")}">−</button><span>${q}</span><button data-a="inc" data-id="${id}" aria-label="${t("add")}">+</button></div>`
- :`<button class="add" data-a="inc" data-id="${id}" aria-label="${t("toCart")}">+</button>`;}
+ :`<button class="pick" data-a="inc" data-id="${id}" aria-label="${t("toCart")}">${t("choose")}</button>`;}
+const priceTxt=i=>{if(!i.v)return money(i.p);const ps=i.v.map(v=>v.p),lo=Math.min(...ps);return (lo===Math.max(...ps)?"":t("from")+" ")+money(lo)};
+const cnt=i=>i.v.reduce((a,v)=>a+(S.cart[v.id]||0),0);
+function pick(i){const n=cnt(i);return `<button class="pick" data-a="opts" data-id="${i.id}">${t("choose")}${n?` · ${n}`:""}</button>`;}
 function bar(){const b=document.getElementById("cartbar");if(!b)return;
- b.hidden=!qty();b.innerHTML=`<button class="btn" data-a="cart"><span>${t("cart")} · ${qty()}</span><span>${money(sum())}</span></button>`;}
-function items(){const c=CATS.find(x=>x.id===S.cat);
- return c.items.map((i,k)=>`<article class="card" style="animation-delay:${k*.08}s"><div class="pic">${i.img?`<img src="${esc(i.img)}" alt="${esc(nm(i))}" onerror="this.remove()">`:""}<span class="big">${i.i}</span></div><div class="meta"><div class="t"><h3>${esc(nm(i))}</h3><p>${esc(ds(i))}</p><div class="pr">${money(i.p)}</div></div><div class="ctl" id="ctl-${i.id}">${ctl(i.id)}</div></div></article>`).join("");}
+ b.hidden=!qty();updateUpsell();b.innerHTML=`<button class="btn" data-a="cart"><span>${t("cart")} · ${qty()}</span><span>${money(sum())}</span></button>`;}
+function pic(i,k){
+ if(!i.img)return "";
+ const s=esc(i.img),a=esc(nm(i)),ld=k?"lazy":"eager";
+ // always full-bleed cover, centered (no aggressive crop)
+ return `<img src="${s}" alt="${a}" style="object-fit:cover;object-position:center center" loading="${ld}" decoding="async" onerror="this.remove()">`;
+}
+function items(){
+ return CATS.map(c=>{
+  const cards=c.items.map((i,k)=>{
+   const isHalal=i.halal||(i.v&&i.v.some(v=>v.halal));
+   const badge=isHalal?'<span class="halal" title="Halal"><img src="assets/halal.png" alt="Halal"></span>':'';
+   return `<article class="card" style="animation-delay:${k*.05}s"><div class="pic"${i.v?` data-a="opts" data-id="${i.id}"`:""}>${pic(i,k)}<span class="big">${i.i}</span>${badge}</div><div class="meta${i.v?" col":""}"><div class="t"><h3>${esc(nm(i))}</h3>${ds(i)?`<p>${esc(ds(i))}</p>`:""}<div class="pr">${priceTxt(i)}</div></div><div class="ctl" id="ctl-${i.id}">${i.v?pick(i):ctl(i.id)}</div></div></article>`;
+  }).join("");
+  return `<div class="cat-page" data-cat="${c.id}">${cards}</div>`;
+ }).join("");
+}
+
+
 
 function sheetHTML(){
- if(!S.sheet)return "";
+ if(!S.sheet) return "";
  let h="";
  if(S.sheet==="cart"){
-  const rows=Object.entries(S.cart).map(([id,q])=>`<div class="line"><div class="n">${esc(nm(ALL[id]))}<small>${money(ALL[id].p)} × ${q}</small></div><div class="step"><button data-a="dec" data-id="${id}">−</button><span>${q}</span><button data-a="inc" data-id="${id}">+</button></div><div class="s">${money(ALL[id].p*q)}</div></div>`).join("");
+  const rows=Object.entries(S.cart).map(([id,q])=>{
+   const item=ALL[id]; if(!item) return "";
+   return `<div class="line"><div class="n">${esc(nm(item))}<small>${money(item.p)} × ${q}</small></div><div class="step"><button data-a="dec" data-id="${id}">−</button><span>${q}</span><button data-a="inc" data-id="${id}">+</button></div><div class="s">${money(item.p*q)}</div></div>`;
+  }).join("");
   h=`<h2>${t("cart")}<button class="x" data-a="close" aria-label="${t("close")}">×</button></h2><div class="body">${rows||`<div class="empty">${t("empty")}</div>`}</div>
-  ${rows?`<div class="total"><span>${t("total")}</span><b>${money(sum())}</b></div><div class="two"><button class="btn" data-a="mode" data-m="delivery">${t("delivery")}</button><button class="btn ghost" data-a="mode" data-m="pickup">${t("pickup")}</button></div>`:""}`;
- }else{
-  const d=S.mode==="delivery",ok=valid();
-  h=`<h2>${d?t("delivery"):t("pickup")}<button class="x" data-a="close" aria-label="${t("close")}">×</button></h2><div class="body">
-  ${d?`<label for="ph">${t("phone")}</label><div class="field"><input id="ph" type="tel" inputmode="tel" placeholder="+66 81 234 5678" value="${esc(S.phone)}" autocomplete="tel"></div><div class="err" id="e-ph"></div>
-  <label for="mp">${t("map")}</label><div class="field"><input id="mp" type="url" inputmode="url" placeholder="https://maps.app.goo.gl/..." value="${esc(S.map)}" autocapitalize="none" autocorrect="off"></div><div class="err" id="e-mp"></div>
-  <div class="note">📍 ${t("ny")}</div>`
-  :`<label>${t("when")}</label><div class="when"><button class="opt ${S.when==="asap"?"on":""}" data-a="when" data-w="asap">${t("asap")}</button><button class="opt ${S.when==="time"?"on":""}" data-a="when" data-w="time">${t("later")}</button></div>
-  ${S.when==="time"?`<div class="field" style="margin-top:10px"><input id="tm" type="time" value="${esc(S.time)}"></div><div class="err" id="e-tm"></div>`:""}`}
-  <div class="total"><span>${t("total")}</span><b>${money(sum())}</b></div></div>
-  ${S.fail?`<div class="err">${t("fail")}</div>`:""}
-  <div class="two"><button class="btn ghost" data-a="tocart">${t("back")}</button><button class="btn" id="go" data-a="send" ${ok&&!S.sending?"":"disabled"}>${S.sending?t("sending"):t("order")}</button></div>`;
+  ${rows?`<div class="total"><span>${t("total")}</span><b>${money(sum())}</b></div>`:""}`;
+ }else if(S.sheet==="opts"){
+  const p=CATS.flatMap(c=>c.items).find(x=>x.id===S.prod);
+  if(!p||!p.v) return "";
+  h=`<h2>${esc(nm(p))}<button class="x" data-a="close" aria-label="${t("close")}">×</button></h2><div class="body">${p.v.map(v=>`<div class="line"><div class="n">${esc(lb(v))}</div><div class="s">${money(v.p)}</div><div class="ctl" id="ctl-${v.id}">${ctl(v.id)}</div></div>`).join("")}</div><div class="two" style="grid-template-columns:1fr"><button class="btn" data-a="close">${t("done")}</button></div>`;
  }
  return `<div class="sheet open"><div class="back" data-a="close"></div><div class="panel" role="dialog">${h}</div></div>`;
 }
-const MAP_RE=/^https?:\/\/(maps\.app\.goo\.gl|goo\.gl\/maps|(www\.)?google\.[a-z.]+\/maps|maps\.google\.[a-z.]+)/i;
-const phOk=()=>{const n=S.phone.replace(/\D/g,"").length;return n>=8&&n<=15};
-const mapOk=()=>MAP_RE.test(S.map.trim());
-const timeOk=()=>S.when==="asap"||/^\d{2}:\d{2}$/.test(S.time);
-function valid(){return S.mode==="delivery"?phOk()&&mapOk():timeOk();}
-function errs(){const s=(id,m)=>{const e=document.getElementById(id);if(e)e.textContent=S.touched&&m?m:""};
- s("e-ph",!phOk()&&t("errPhone"));s("e-mp",!mapOk()&&t("errMap"));s("e-tm",!timeOk()&&t("errTime"));
- const g=document.getElementById("go");if(g)g.disabled=!valid()||S.sending;}
+
+function updateUpsell(){
+  const el=document.getElementById("beerUpsell");
+  if(!el)return;
+  // Показывать только 1 раз за сессию
+  if(S.beerShown){ el.hidden=true; return; }
+  const mainIds = new Set();
+  for(const c of CATS){
+    if(["burgers","main","grill","hotpot","salads"].includes(c.id)){
+      for(const i of c.items){
+        if(i.v) i.v.forEach(v=>mainIds.add(v.id));
+        else mainIds.add(i.id);
+      }
+    }
+  }
+  const hasMain = Object.keys(S.cart).some(id=>mainIds.has(id) && S.cart[id]>0);
+  const hasBeer = Object.keys(S.cart).some(id=>id.startsWith("br") && S.cart[id]>0);
+  const show = hasMain && !hasBeer;
+  el.hidden = !show;
+  if(show) S.beerShown = true; // больше не показывать в этой сессии
+}
 
 function render(){
  if(S.screen==="welcome"){$.innerHTML=`<div class="welcome"><img class="logo" src="${LOGO}" alt="Afterwave Moonshine Bar"><p>${t("tagline")}</p><button class="btn" data-a="open">${t("view")}</button></div>`;return;}
  if(S.screen==="thanks"){$.innerHTML=`<div class="thanks"><img src="${LOGO}" alt=""><h1>${t("thanks")}</h1><p>${t("thanksText")}</p><button class="btn ghost" data-a="home">${t("home")}</button></div>`;return;}
  const cur=CATS.find(x=>x.id===S.cat);
- $.innerHTML=`<div class="top"><img src="${LOGO}" alt=""><div><b>Afterwave</b><small>Moonshine bar</small></div></div>
+ $.innerHTML=`<div class="screen-main">
+ <div class="top"><img src="${LOGO}" alt=""><div><b>Afterwave</b><small>Moonshine bar</small></div></div>
  <div class="tabs" id="tabs">${CATS.map(c=>`<button class="tab ${c.id===S.cat?"on":""}" data-a="cat" data-id="${c.id}">${cname(c)}</button>`).join("")}</div>
- <div class="head2"><span class="grp">${gn(cur)}</span><span class="cnt" id="cnt">1 / ${cur.items.length}</span></div><div class="deck" id="list">${items()}</div><div class="cartbar" id="cartbar" hidden></div><div id="sheet">${sheetHTML()}</div>`;
- bar();const l=document.getElementById("list"),cn=document.getElementById("cnt");const cw=()=>{const c=l.querySelector(".card");return c?c.offsetWidth+14:1};l.addEventListener("scroll",()=>{const k=CATS.find(x=>x.id===S.cat).items.length;cn.textContent=Math.min(k,Math.round(l.scrollLeft/cw())+1)+" / "+k},{passive:true});
+ <div class="head2"><span class="grp">${gn(cur)}</span><span class="cnt" id="cnt">${cur.items.length} поз.</span></div>
+ <div class="deck" id="list">${items()}</div>
+ <div class="beer-upsell" id="beerUpsell" hidden>
+  <button type="button" class="beer-no" data-a="beer-dismiss">${t("beerNo")}</button>
+  <button type="button" class="beer-yes" data-a="beer-upsell">${t("beerYes")}</button>
+ </div>
+ <div class="cartbar" id="cartbar" hidden></div>
+</div><div id="sheet">${sheetHTML()}</div>`;
+ bar();
+ const l=document.getElementById("list"),cn=document.getElementById("cnt");
+ // scroll to current category page
+ const idx0=CATS.findIndex(x=>x.id===S.cat);
+ if(l){l.scrollLeft=idx0*l.clientWidth;}
+ if(cn){const c=CATS.find(x=>x.id===S.cat);cn.textContent=(c?c.items.length:0)+" поз.";}
+ // horizontal snap → change category
+ let scrollTO=null, advancing=false;
+ l.addEventListener("scroll",()=>{
+  clearTimeout(scrollTO);
+  scrollTO=setTimeout(()=>{
+   if(!l.clientWidth) return;
+   const idx=Math.round(l.scrollLeft/l.clientWidth);
+   const cat=CATS[Math.max(0,Math.min(CATS.length-1,idx))];
+   if(cat && cat.id!==S.cat){
+    advancing=true;
+    setCat(cat.id, true);
+    setTimeout(()=>advancing=false,200);
+   }
+  },60);
+ },{passive:true});
 }
+
 function refresh(id){
- const c=document.getElementById("ctl-"+id);if(c)c.innerHTML=ctl(id);bar();
+ const c=document.getElementById("ctl-"+id);if(c)c.innerHTML=ctl(id);
+ const pp=PROD[id];if(pp){const pc=document.getElementById("ctl-"+pp.id);if(pc)pc.innerHTML=pick(pp);}
+ bar();
  if(S.sheet==="cart"){if(!qty()){S.sheet=null;}document.getElementById("sheet").innerHTML=sheetHTML();}
 }
-async function send(){
- S.touched=true;if(!valid()){errs();return;}
- S.sending=true;S.fail=false;document.getElementById("sheet").innerHTML=sheetHTML();
- const order={mode:S.mode,phone:S.mode==="delivery"?S.phone.trim():null,map:S.mode==="delivery"?S.map.trim():null,when:S.mode==="pickup"?(S.when==="asap"?"ASAP":S.time):null,
-  items:Object.entries(S.cart).map(([id,q])=>({id,qty:q}))};
- try{
-  if(ORDER_ENDPOINT){const r=await fetch(ORDER_ENDPOINT,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(order),signal:AbortSignal.timeout(10000)});if(!r.ok)throw 0;}
-  S.sending=false;S.sheet=null;S.cart={};S.screen="thanks";render();
- }catch{S.sending=false;S.fail=true;document.getElementById("sheet").innerHTML=sheetHTML();}
-}
-function setCat(id){S.cat=id;const c=CATS.find(x=>x.id===id);
+
+function setCat(id, fromScroll){
+ S.cat=id;const c=CATS.find(x=>x.id===id);
  document.querySelectorAll(".tab").forEach(b=>b.classList.toggle("on",b.dataset.id===id));
- document.querySelector(".head2 .grp").textContent=gn(c);
- document.getElementById("cnt").textContent="1 / "+c.items.length;
- const l=document.getElementById("list");l.innerHTML=items();l.scrollLeft=0;
+ const grp=document.querySelector(".head2 .grp");if(grp)grp.textContent=gn(c);
+ const cn=document.getElementById("cnt");if(cn)cn.textContent=c.items.length+" поз.";
+ const l=document.getElementById("list");
+ if(l && !fromScroll){
+  const idx=CATS.findIndex(x=>x.id===id);
+  l.scrollTo({left:idx*l.clientWidth,behavior:"smooth"});
+  // scroll active page to top
+  const page=l.querySelector(`.cat-page[data-cat="${id}"]`);
+  if(page) page.scrollTop=0;
+ }
  const b=document.querySelector(".tab.on"),t=document.getElementById("tabs");
- t.scrollTo({left:t.scrollLeft+b.getBoundingClientRect().left-t.getBoundingClientRect().left-(t.clientWidth-b.offsetWidth)/2,behavior:"smooth"});}
+ if(b&&t) t.scrollTo({left:t.scrollLeft+b.getBoundingClientRect().left-t.getBoundingClientRect().left-(t.clientWidth-b.offsetWidth)/2,behavior:"smooth"});
+ updateUpsell();
+}
 $.addEventListener("click",e=>{
  const t=e.target.closest("[data-a]");if(!t)return;const a=t.dataset.a,id=t.dataset.id;
  if(a==="open"){S.screen="menu";render();}
- else if(a==="home"){S.screen="welcome";S.mode=null;S.touched=false;render();}
+ else if(a==="home"){S.screen="welcome";render();}
  else if(a==="cat"){setCat(id);}
  else if(a==="inc"){S.cart[id]=(S.cart[id]||0)+1;refresh(id);}
  else if(a==="dec"){S.cart[id]=(S.cart[id]||0)-1;if(S.cart[id]<=0)delete S.cart[id];refresh(id);}
+ else if(a==="opts"){S.sheet="opts";S.prod=id;document.getElementById("sheet").innerHTML=sheetHTML();}
+ else if(a==="beer-dismiss"){S.beerShown=true;const el=document.getElementById("beerUpsell");if(el)el.hidden=true;}
+ else if(a==="beer-upsell"){S.beerShown=true;const el=document.getElementById("beerUpsell");if(el)el.hidden=true;S.cat="beerwine";setCat("beerwine");S.sheet="opts";S.prod="br";document.getElementById("sheet").innerHTML=sheetHTML();}
  else if(a==="cart"){S.sheet="cart";document.getElementById("sheet").innerHTML=sheetHTML();}
- else if(a==="close"){S.sheet=null;S.fail=false;document.getElementById("sheet").innerHTML="";}
- else if(a==="mode"){S.mode=t.dataset.m;S.sheet="form";S.touched=false;document.getElementById("sheet").innerHTML=sheetHTML();}
- else if(a==="tocart"){S.sheet="cart";S.fail=false;document.getElementById("sheet").innerHTML=sheetHTML();}
- else if(a==="when"){S.when=t.dataset.w;document.getElementById("sheet").innerHTML=sheetHTML();}
- else if(a==="send"){send();}
+ else if(a==="close"){S.sheet=null;document.getElementById("sheet").innerHTML="";}
 });
-$.addEventListener("input",e=>{const t=e.target;
- if(t.id==="ph"){t.value=t.value.replace(/[^\d+\s()-]/g,"");S.phone=t.value;}
- else if(t.id==="mp")S.map=t.value;else if(t.id==="tm")S.time=t.value;
- else return;
- errs();});
-$.addEventListener("focusout",e=>{if(e.target.closest&&e.target.closest("#sheet")){S.touched=true;errs();}});
 render();
 </script>
 </body>
